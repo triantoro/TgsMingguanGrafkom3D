@@ -17,19 +17,30 @@ IF-10
 void init(void){
 	glClearColor(0.0,0.0,0.0,0.0);
 	glShadeModel(GL_FLAT);
+	glEnable(GL_DEPTH_TEST);
+	glEnable(GL_LIGHTING);
+	glEnable(GL_LIGHT0);
 }
 
 void display(void){
-	glClear(GL_COLOR_BUFFER_BIT);
+	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 	glColor3f(1.0,1.0,1.0);
 	glLoadIdentity();
 	gluLookAt(3.3,3.3,3.0,0.0,0.25,0.0,0.0,1.0,0.0);
+	
+	//teapot
+	glPushMatrix();
+    glScaled(0.2, 0.3, 0.2);
+    glTranslated(0.5, 7.5, 0.5);
+	glutSolidTeapot(2.5);
+	glPopMatrix();
+	
 	
 	//meja atas
     glPushMatrix();
     glScaled(0.5,0.05,0.5);
     glTranslated(0.0, 30.2, 0.0);
-	glutWireCube(7.0);
+	glutSolidCube(7.0);
 	glPopMatrix();
 	
 	glTranslatef(-0.2, 0.2, 0.0);
@@ -39,31 +50,33 @@ void display(void){
 	glPushMatrix();
     glScaled(.2,3.0, .2);
     glTranslated(2, -1.9, 2);
-	glutWireCube(3.0);
+	glutSolidCube(3.0);
 	glPopMatrix();
 	
 	//kaki2
 	glPushMatrix();
     glScaled(.2,3.0, .2);
     glTranslated(-20, -1.9, 2);
-	glutWireCube(3.0);
+	glutSolidCube(3.0);
 	glPopMatrix();
 	
 	//kaki3
 	glPushMatrix();
     glScaled(.2,3.0, .2);
     glTranslated(2, -1.9, -20);
-	glutWireCube(3.0);
+	glutSolidCube(3.0);
 	glPopMatrix();
 	
 	//kaki3
 	glPushMatrix();
     glScaled(.2,3.0, .2);
     glTranslated(-20, -1.9, -20);
-	glutWireCube(3.0);
+	glutSolidCube(3.0);
 	glPopMatrix();
 	
 	
+	
+    glutSwapBuffers();
 	glFlush();
 }
 
@@ -77,7 +90,7 @@ void reshape(int w, int h){
 
 int main(int argc, char** argv){
 	glutInit(&argc, argv);
-	glutInitDisplayMode(GLUT_SINGLE | GLUT_RGB);
+	glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGBA | GLUT_DEPTH);
 	glutInitWindowSize(800,800);
 	glutInitWindowPosition(50,50);
 	glutCreateWindow("Tugas Grafkom 3D Kelompok 10");
