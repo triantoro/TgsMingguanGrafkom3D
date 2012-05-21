@@ -15,7 +15,7 @@ IF-10
 
 
 void init(void){
-    GLfloat mat_specular[] = { 1.0, 0.0, 1.0, 1.0 };
+    GLfloat mat_specular[] = { 0.0, 0.0, 1.0, 1.0 };
 	GLfloat mat_shininess[] = { 35.0 };
 	GLfloat light_position[] = { 1.0, 1.0, 1.0, 0.0 };
 	GLfloat light_position2[] = { -2.0, 1.0, 1.0, 0.0 };
@@ -41,51 +41,51 @@ void display(void){
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 	glColor3f(1.0,1.0,1.0);
 	glLoadIdentity();
-	gluLookAt(3.3,3.3,3.0,0.0,0.25,0.0,0.0,1.0,0.0);
+	gluLookAt(2.0,2.0,4.0,0.0,0.25,0.0,0.0,1.0,0.0);
 	
 	//teapot
 	glPushMatrix();
     glScaled(0.2, 0.3, 0.2);
-    glTranslated(0.5, 7.5, 0.5);
+    glTranslated(-2.5, 4.3, 2.0);
 	glutSolidTeapot(2.5);
 	glPopMatrix();
 	
 	
 	//meja atas
     glPushMatrix();
-    glScaled(0.5,0.05,0.5);
-    glTranslated(0.0, 30.2, 0.0);
+    glScaled(0.3,0.005,0.3);
+    glTranslated(-2.0, 140.0, 1.0);
 	glutSolidCube(7.0);
 	glPopMatrix();
 	
-	glTranslatef(-0.2, 0.2, 0.0);
-	glScaled(1.2, 0.25, 1.2);
+	glTranslatef(-1, 0.4, -1.5);
+	glScaled(0.5, 0.25, 0.5);
 	
 	//kaki1
 	glPushMatrix();
     glScaled(.2,3.0, .2);
-    glTranslated(2, -1.9, 2);
+    glTranslated(5, -1.9, 14.7);
 	glutSolidCube(3.0);
 	glPopMatrix();
 	
 	//kaki2
 	glPushMatrix();
     glScaled(.2,3.0, .2);
-    glTranslated(-20, -1.9, 2);
+    glTranslated(-20, -1.9, 14.7);
 	glutSolidCube(3.0);
 	glPopMatrix();
 	
 	//kaki3
 	glPushMatrix();
     glScaled(.2,3.0, .2);
-    glTranslated(2, -1.9, -20);
+    glTranslated(5, -1.9, -12.7);
 	glutSolidCube(3.0);
 	glPopMatrix();
 	
-	//kaki3
+	//kaki4
 	glPushMatrix();
     glScaled(.2,3.0, .2);
-    glTranslated(-20, -1.9, -20);
+    glTranslated(-20, -1.9, -12.7);
 	glutSolidCube(3.0);
 	glPopMatrix();
 	
