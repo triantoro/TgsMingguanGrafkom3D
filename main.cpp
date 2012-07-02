@@ -3,7 +3,7 @@
 Tugas Grafkom 3D Meja
 Triantoro Sulistio  10108469
 Deni Ocktaviyan     10108502
-Arif Rahman         10108485
+Arif Rahman IF 10         10108485
 Harya Gusdevi       10108480
 
 IF-10
